@@ -1,45 +1,47 @@
 <!doctype html>
-<html>
+<html lang="zh-Hant">
     <head>
-        <title>赫淮斯托斯飲料</title>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>赫淮斯托斯飲料</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            iframe {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
     </head>
-    <body
-        style="
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: sans-serif;
-        "
-    >
-        <div>
-            <h2>Google Apps Script Page</h2>
-            <p>This content cannot be embedded for security reasons.</p>
-            <button
-                onclick="openScript()"
-                style="
-                    padding: 12px 20px;
-                    font-size: 16px;
-                    border: none;
-                    border-radius: 8px;
-                    background: #4285f4;
-                    color: white;
-                    cursor: pointer;
-                "
-            >
-                Open in New Tab
-            </button>
-        </div>
+    <body>
+        <iframe
+            src="https://script.google.com/macros/s/AKfycbyw2kUdBxVSNJdaBFYRkK3kw2VmhGT-Ocqh1Bs8AmzeBq2c8KWL0zg9faoi4vxAagd6/exec"
+            allowfullscreen
+        >
+        </iframe>
 
         <script>
-            function openScript() {
-                window.open(
-                    "https://script.google.com/macros/s/AKfycbyw2kUdBxVSNJdaBFYRkK3kw2VmhGT-Ocqh1Bs8AmzeBq2c8KWL0zg9faoi4vxAagd6/exec",
-                    "_blank",
-                );
-            }
+            window.addEventListener("load", () => {
+                const iframe = document.querySelector("iframe");
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen().catch((err) => {
+                        console.error(
+                            "Error attempting to enable full-screen mode:",
+                            err.message,
+                        );
+                    });
+                }
+            });
         </script>
     </body>
 </html>
