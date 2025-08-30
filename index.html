@@ -1,37 +1,45 @@
 <!doctype html>
 <html>
     <head>
-        <title>Embedded Content</title>
+        <title>Open Google Apps Script</title>
+        <meta charset="UTF-8" />
     </head>
-    <body>
-        <iframe
-            src="https://script.google.com/macros/s/AKfycbyw2kUdBxVSNJdaBFYRkK3kw2VmhGT-Ocqh1Bs8AmzeBq2c8KWL0zg9faoi4vxAagd6/exec"
-            width="100%"
-            height="100%"
-            allowfullscreen="true"
-            style="
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: none;
-            "
-        >
-        </iframe>
+    <body
+        style="
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+        "
+    >
+        <div>
+            <h2>Google Apps Script Page</h2>
+            <p>This content cannot be embedded for security reasons.</p>
+            <button
+                onclick="openScript()"
+                style="
+                    padding: 12px 20px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 8px;
+                    background: #4285f4;
+                    color: white;
+                    cursor: pointer;
+                "
+            >
+                Open in New Tab
+            </button>
+        </div>
 
         <script>
-            window.onload = function () {
-                document
-                    .querySelector("iframe")
-                    .requestFullscreen()
-                    .catch((err) => {
-                        console.error(
-                            "Error attempting to enable full-screen mode:",
-                            err.message,
-                        );
-                    });
-            };
+            function openScript() {
+                window.open(
+                    "https://script.google.com/macros/s/AKfycbyw2kUdBxVSNJdaBFYRkK3kw2VmhGT-Ocqh1Bs8AmzeBq2c8KWL0zg9faoi4vxAagd6/exec",
+                    "_blank",
+                );
+            }
         </script>
     </body>
 </html>
